@@ -2,7 +2,6 @@
 
 Multidimensional Voice Program Analysis (MDVP) is an advanced system which allows for the measurement of 33 quantitative voice parameters. 195 MDVP analysis data records were used to build a model capable of detecting vocal attributes possibly linked with tremors associated with Parkinson's Disease. From these 195 recordings, supplied by 31 people. 23 had Parkinson's and 8 people did not. Of the 33 parameters MDVP extrapolates, 22 were supplied in the dataset.
 
-^^^^^IDK what to say there^^^^^
 
 ## Hypothesis
 
