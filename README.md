@@ -123,3 +123,6 @@ From the tested models, the model with the least number of false negatives (miss
 The coefficients determined to be predictive of Parkinson's Disease based upon MDVP parameters being the following:
 
 ![](images/coefficients.png)
+
+## Continued work
+I plan to try adjusting thresholds
