@@ -125,4 +125,4 @@ The coefficients determined to be predictive of Parkinson's Disease based upon M
 ![](images/coefficients.png)
 
 ## Continued work
-I plan to try adjusting thresholds
+I plan to try adjusting thresholds. The goal is to reduce the number of false negative predictions while also not dramatically increasing the number of false positives.
