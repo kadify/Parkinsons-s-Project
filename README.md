@@ -20,16 +20,17 @@ Multidimensional Voice Program Analysis (MDVP) is an advanced system which allow
 
 ## Exploratory Data Analysis & Data Cleaning
 
+#### Class Imbalance 
 ![](images/class_imbalance2.png)
 
-There was an observed class imbalance due to there being data logs from 22 people with Parkinson's but only 8 from people who did not have Parkinson's. Data sampling methods had to be used (explained in section XXXXXXX) to handle this.
+There was an observed class imbalance due to there being data logs from 22 people with Parkinson's but only 8 from people who did not have Parkinson's. Data sampling methods had to be used (explained in section XXXXXXX) to handle this. 
 
-
+#### Feature Collinearity
 ![](images/initital_heatmap.png)
 
-Looking at the correlation heatmap each of the 22 parameters has a fairly decent correlation with status (whether the recording was from someone with Parkinson's or from someone without Parkinson's). The highest correlations between the parameters and status being spread1 and PPE with a positive 0.56 and 0.53 correlation, respectively. PPE has a positive correlation 0.53. MDVP.Fo(Hz), MDVP.Flo(Hz), and HNR have negative correlations of -0.38, -0.38 and -0.36. These will be the parameters I look at first when modeling, however with most of the other parameters having at least a 0.15 correlation, it may be difficult to fit with only 5 parameters when all the others are correlated. I will have to look to see if any parameters appear to be correlated between each other as well to help determine which parameters may be correliant on another parameter.
+Looking at the correlation between each of the 22 MDVP parameters there was a fairly decent collinearity (similarity between features)  with status (whether the recording was from someone with Parkinson's or from someone without Parkinson's). The highest correlations between the parameters and status being spread1 and PPE with a positive 0.56 and 0.53 correlation, respectively. PPE had a positive correlation 0.53. MDVP.Fo(Hz), MDVP.Flo(Hz), and HNR had negative correlations of -0.38, -0.38 and -0.36. These were the parameters I looked at first when modeling, however with most of the other parameters having at least a 0.15 correlation, I initially thought it may be difficult to fit with only 5 parameters when all the others are also correlated. 
 
-Additionally, looking at the heatmap, the following parameters have correlations with eachother above 0.90 and therefore may be **colinear**:
+Additionally, looking at the correlations, the following parameters have correlations with eachother above 0.90 and therefore are not likely contributing much additionall information due to them being **colinear**:
 
 **MDVP:Jitter(%)**
 - MDVP:Jitter(Abs) & MDVP:Jitter(%) (0.94)
@@ -89,25 +90,25 @@ During exploration, many of the parameters were colinear and I decided to drop t
 3. MDVP:RAP
 4. MDVP:Shimmer(dB)
 
+![](images/my_heatmap.png)
+
+Many of the parameters are transformations of other parameters therefore I manually selected 3 parameters.
+
 ---
 
 ![](images/second_heatmap.png)
 
-After the second heatmap, I chose to do logistic regression models on the following parameters trying to predict a person's status (whether they have Parkinson's Disease or not):
+After the second heatmap, I chose to explore various models. I compared models based upon all of the features and also on the following parameters I selected trying to predict a person's status (whether they have Parkinson's Disease or not):
 - MDVP:Fo(Hz)
 - MDVP:Flo(Hz)
 - spread1
 
-A model was created via Logistic Regression and several types of data manipulation on both the parameters I selected above as well as the whole dataset (with all parameters) to try to present the best model for predicting whether a person has Parkinson's Disease.
-
-
-
 ![](images/my_scatter.png)
-I created a scattermatrix to visualize the distributions between the parameters.
+I created a scattermatrix to visualize the distributions between the parameters and the target (status). Since status is classified into 0s (healthy people) and 1s (people with Parkinson's), I chose that I would need to experiment with models better suited to classifying data such as:
+* Logistic Regression
+* Random Forest Classifier
+* Gradient Boosting Classifier
 
-![](images/my_heatmap.png)
-
-Many of the parameters are transformations of other parameters therefore I manually selected 3 parameters to test a logistic regression model. This model was then compared to one with all parameters and using Lasso Regularization, the coefficients utilized and their importance in the model prediction equation was used to determine which parameters were instrumental in predicting whether someone had Parkinson's.
 
 ## Model Methodology
 This was an exploratory analysis in the best method to create a model that limits false negative results. Recall was used to determine the fidelity the model represented in correctly detecting if someone did indeed have Parkinson's Disease.
