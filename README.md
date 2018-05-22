@@ -111,7 +111,7 @@ I created a scattermatrix to visualize the distributions between the parameters 
 ## Model Methodology
 This was an exploratory analysis in the best method to create a model that limits false negative results. Recall was used to determine the fidelity the model represented in correctly detecting if someone did indeed have Parkinson's Disease.
 
- \(Recall = \frac{Number of correct positive diagnoses}{(Number of correct positive diagnoses)+(Number of incorrect negative diagnoses)}\))
+ ![](images/Recall.png)
 
 As a result, precision, depending on number of incorrect false positive results, was not investigated. With regards to why recall was investigated and not precision, in medicine, minimizing the number of diagnoses missed (false negatives) if imperative while number of preemeptive diagnoses (false positives) is not.
 
