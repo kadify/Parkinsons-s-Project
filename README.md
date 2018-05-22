@@ -84,15 +84,20 @@ Additionally, looking at the correlations, the following parameters have correla
 **Spread1**
 - PPE & Spread1 (0.96)
 
-During exploration, many of the parameters were colinear and I decided to drop the following parameters and do a secondary correlation heatmap:
+During exploration, many of the parameters were colinear (having a correlation value of 1.0) and I decided to drop the following parameters:
 1. Shimmer:APQ3
 2. Shimmer:APQ5
 3. MDVP:RAP
 4. MDVP:Shimmer(dB)
 
+Many of the parameters are transformations of other parameters therefore I manually selected 3 parameters:
+1. MDVP: Fo (Hz)
+2. MDVP: Flo (Hz)
+3. spread1
+
 ![](images/my_heatmap.png)
 
-Many of the parameters are transformations of other parameters therefore I manually selected 3 parameters.
+
 
 ---
 
