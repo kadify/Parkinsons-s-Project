@@ -20,7 +20,7 @@ Multidimensional Voice Program Analysis (MDVP) is an advanced system which allow
 
 ## Exploratory Data Analysis & Data Cleaning
 
-![](images/class_imbalance.png)
+![](images/class_imbalance2.png)
 
 There was an observed class imbalance due to there being data logs from 22 people with Parkinson's but only 8 from people who did not have Parkinson's. Data sampling methods had to be used (explained in section XXXXXXX) to handle this.
 
