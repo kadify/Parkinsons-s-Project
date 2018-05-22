@@ -90,23 +90,16 @@ During exploration, many of the parameters were colinear (having a correlation v
 3. MDVP:RAP
 4. MDVP:Shimmer(dB)
 
-Many of the parameters are transformations of other parameters therefore I manually selected 3 parameters:
+![](images/second_heatmap.png)
+
+From the secondary correlation map, it was clear there were still a lot of parameters that had significant collinearity with each other. This is most likely because the parameters are transformations of other parameters, therefore I manually selected 3 parameters to investigate for my model:
 1. MDVP: Fo (Hz)
 2. MDVP: Flo (Hz)
 3. spread1
 
 ![](images/my_heatmap.png)
 
-
-
 ---
-
-![](images/second_heatmap.png)
-
-After the second heatmap, I chose to explore various models. I compared models based upon all of the features and also on the following parameters I selected trying to predict a person's status (whether they have Parkinson's Disease or not):
-- MDVP:Fo(Hz)
-- MDVP:Flo(Hz)
-- spread1
 
 ![](images/my_scatter.png)
 I created a scattermatrix to visualize the distributions between the parameters and the target (status). Since status is classified into 0s (healthy people) and 1s (people with Parkinson's), I chose that I would need to experiment with models better suited to classifying data such as:
