@@ -20,6 +20,10 @@ Multidimensional Voice Program Analysis (MDVP) is an advanced system which allow
 
 ## Exploratory Data Analysis & Data Cleaning
 
+![](images/class_imbalance.png)
+There was an observed class imbalance due to there being data logs from 22 people with Parkinson's but only 8 from people who did not have Parkinson's. Data sampling methods had to be used (explained in section XXXXXXX) to handle this.
+
+
 ![](images/initital_heatmap.png)
 
 Looking at the correlation heatmap each of the 22 parameters has a fairly decent correlation with status (whether the recording was from someone with Parkinson's or from someone without Parkinson's). The highest correlations between the parameters and status being spread1 and PPE with a positive 0.56 and 0.53 correlation, respectively. PPE has a positive correlation 0.53. MDVP.Fo(Hz), MDVP.Flo(Hz), and HNR have negative correlations of -0.38, -0.38 and -0.36. These will be the parameters I look at first when modeling, however with most of the other parameters having at least a 0.15 correlation, it may be difficult to fit with only 5 parameters when all the others are correlated. I will have to look to see if any parameters appear to be correlated between each other as well to help determine which parameters may be correliant on another parameter.
