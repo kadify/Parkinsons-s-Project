@@ -113,20 +113,12 @@ This was an exploratory analysis in the best method to create a model that limit
 
  ![](images/Recall.png)
 
-As a result, precision, depending on number of incorrect false positive results, was not investigated. With regards to why recall was investigated and not precision, in medicine, minimizing the number of diagnoses missed (false negatives) if imperative while number of preemeptive diagnoses (false positives) is not.
+As a result, precision, depending on number of incorrect false positive results, was not investigated. With regards to why recall was investigated and not precision, in medicine, minimizing the number of diagnoses missed (false negatives) is imperative while number of preemeptive diagnoses (false positives) is not generally as costly.
 
-Multiple methods were sampled and visualized below to determine which resulted in the highest recall for the test data (data never before seen by the model) in conjunction with the highest accuracy (indicating that there isn't a tradeoff of less false negatives for more false positives).
+Multiple types of models were sampled and used to determine which resulted in the highest recall for the test data (data never before seen by the model) in conjunction with the highest accuracy (indicating that there isn't a tradeoff of less false negatives for more false positives). It was found that a Gradient Boosted Classifying model with an exponential loss was the most appropriate and resulted in the fewest missed diagnoses.
 
 ## Model
-![](images/boxplotcomparison.png)
 
-From the tested models, the model with the least number of false negatives (missed Parkinson's detection) while maintaining the highest level of accuracy appeared to be a normal stratified, non-weighted, non-bootstrapped, non-sample biased (undersampled vs oversampled), logistic regression plot. With this model there are still false negatives when predicting with the original test dataset. Adjusting the threshold could remedy this and produce a model that has a higher recall.
-
----
-
-The coefficients determined to be predictive of Parkinson's Disease based upon MDVP parameters being the following:
-
-![](images/coefficients.png)
 
 ## Continued work
 I plan to try adjusting thresholds. The goal is to reduce the number of false negative predictions while also not dramatically increasing the number of false positives.
