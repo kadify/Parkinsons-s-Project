@@ -118,6 +118,11 @@ As a result, precision, depending on number of incorrect false positive results,
 Multiple types of models were sampled and used to determine which resulted in the highest recall for the test data (data never before seen by the model) in conjunction with the highest accuracy (indicating that there isn't a tradeoff of less false negatives for more false positives). It was found that a Gradient Boosted Classifying model with an exponential loss was the most appropriate and resulted in the fewest missed diagnoses.
 
 ## Model
+After performing a gridsearch of the mentioned models above, a gradient boosted classifying model returned the best prediction with the lowest number of missed diagnoses (recall). 
+
+|![](images/naive_gbc.png)|![](images/optimized_gbc.png)|
+|-|-|
+|as | sas|
 
 
 ## Continued work
