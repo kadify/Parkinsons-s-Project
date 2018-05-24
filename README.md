@@ -122,7 +122,9 @@ After performing a gridsearch of the mentioned models above, a gradient boosted 
 
 |![](images/naive_gbc.png)|![](images/optimized_gbc.png)|
 |-|-|
-|as | sas|
+|A naive gradient boosted classifier model on the manually selected features. Using the MDVP: Fo(Hz), MDVP:Flo(Hz), and spread1 features, a precision of 0.896, recall of 0.909, accuracy of 0.852, and a ROC Area Under the Curve value of 0.795 represents the ability of the model to generalize well to unseen data. | An optimized gradient boosted classifier model on the manually selected features. Using the MDVP: Fo(Hz), MDVP:Flo(Hz), and spread1 features, a precision of 0.899, recall of 0.939, accuracy of 0.875, and a ROC Area Under the Curve value of 0.811 represents the ability of the model to generalize well to unseen data.|
+
+The optimized gradient boosted model generalizes better than the naive model and represents a higher recall score over the naive model. 
 
 
 ## Continued work
