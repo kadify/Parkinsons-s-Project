@@ -1,16 +1,17 @@
-from sklearn.metrics import precision_score, recall_score, accuracy_score
-from sklearn.utils import resample
-from imblearn.combine import SMOTETomek, SMOTEENN
-from sklearn.pipeline import Pipeline
 import pickle
-import sklearn.metrics as metrics
+import numpy as np
 import pandas as pd
 from tabulate import tabulate
-import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import confusion_matrix
+from imblearn.combine import SMOTETomek, SMOTEENN
+from sklearn.utils import resample
+from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split, GridSearchCV, cross_validate
+from sklearn.metrics import precision_score, recall_score, accuracy_score, confusion_matrix, roc_curve, roc_auc_score
+
+
+
 class gridsearch_models():
     '''
     Code to run:
@@ -229,8 +230,8 @@ class gridsearch_models():
         '''
         Outputs ROC curve based on
         '''
-        fpr, tpr, _ = metrics.roc_curve(self.y_test,  self.y_predict_model)
-        self.auc = metrics.roc_auc_score(self.y_test,  self.y_predict_model)
+        fpr, tpr, _ = roc_curve(self.y_test,  self.y_predict_model)
+        self.auc = roc_auc_score(self.y_test,  self.y_predict_model)
         plt.plot(fpr,tpr,label="data 1, auc="+str(self.auc))
         plt.legend(loc=4)
         plt.show()
