@@ -235,3 +235,16 @@ class gridsearch_models():
         plt.plot(fpr,tpr,label="data 1, auc="+str(self.auc))
         plt.legend(loc=4)
         plt.show()
+
+        
+if __name__ == '__main__':
+    
+    df = pd.read_csv('parkinsons.data.txt')
+
+    paramlist = [('GB', GradientBoostingClassifier(), {'n_estimators':[10, 50, 100, 200, 500],
+                                                         'max_features':[None, 1, 2, 3, 4, 5, 6, 7, 8],
+                                                         'max_depth':[None, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20],
+                                                         'learning_rate':[.01, .05, .1, 0.5, 1, 2],
+                                                         'loss': ['deviance', 'exponential']})]
+
+    tomek1000 = gridsearch_models(df, 'status', sample_type='tomek', n=1000).gridsrch(paramlist)
