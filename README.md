@@ -30,7 +30,7 @@ There was an observed class imbalance due to there being data logs from 22 peopl
 
 Looking at the correlation between each of the 22 MDVP parameters there was a fairly decent collinearity (similarity between features)  with status (whether the recording was from someone with Parkinson's or from someone without Parkinson's). The highest correlations between the parameters and status being spread1 and PPE with a positive 0.56 and 0.53 correlation, respectively. PPE had a positive correlation 0.53. MDVP.Fo(Hz), MDVP.Flo(Hz), and HNR had negative correlations of -0.38, -0.38 and -0.36. These were the parameters I looked at first when modeling, however with most of the other parameters having at least a 0.15 correlation, I initially thought it may be difficult to fit with only 5 parameters when all the others are also correlated. 
 
-Additionally, looking at the correlations, the following parameters have correlations with eachother above 0.90 and therefore are not likely contributing much additionall information due to them being **colinear**:
+Additionally, looking at the correlations, the following parameters have correlations with each other above 0.90 and therefore are not likely contributing much additional information due to them being **colinear**:
 
 **MDVP:Jitter(%)**
 - MDVP:Jitter(Abs) & MDVP:Jitter(%) (0.94)
