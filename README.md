@@ -129,7 +129,7 @@ The optimized gradient boosted model generalizes better than the naive model and
 
 ## Formal Presentation
 
-|![](images/Parkinsons_presentation.png)|
+![](images/Parkinsons_presentation.png)
 
 
 ## Continued work
