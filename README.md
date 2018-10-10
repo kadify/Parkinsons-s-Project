@@ -127,5 +127,11 @@ After performing a gridsearch of the mentioned models above, a gradient boosted 
 The optimized gradient boosted model generalizes better than the naive model and represents a higher recall score over the naive model. The optimized model performs better resulting in a 93.9% recall score which means out of 100 people with parkinson's, this model would be able to correctly diagnose ~94 of them. 
 
 
+## Formal Presentation
+
+|![](Parkinsons_presentation.pdf)|
+
+
+
 ## Continued work
 If I were to continue work with this model I would like to see what few records the model isn't able to correctly diagnose as parkinson's and see what the respective MDVP: Fo(Hz), MDVP:Flo(Hz), and spread1 feature values are. This model technically isn't predicting whether someone has parkinson's or not. The model, on a mechanical basis, is just predicting the probability that someone has parkinson's based on the mentioned feature values. It is possible that the diagnoses that the model misses are because the scores for these respective people are not in the range of other people with parkinson's. This could be a result of them being at an earlier stage of parkinson's and therefore do not have significant vocal changes and therefore still sound 'normal'. It would be interesting to explore whether that is the case or if the model is truly just misdiagnosing cases of parkinson's that otherwise fall into the normal range other people with parkinson's demonstrate for these features.
