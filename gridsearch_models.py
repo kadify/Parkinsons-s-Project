@@ -228,7 +228,7 @@ class gridsearch_models():
 
     def ROCYOU(self, model):
         '''
-        Outputs ROC curve based on
+        Outputs ROC curve based on model
         '''
         fpr, tpr, _ = roc_curve(self.y_test,  self.y_predict_model)
         self.auc = roc_auc_score(self.y_test,  self.y_predict_model)
